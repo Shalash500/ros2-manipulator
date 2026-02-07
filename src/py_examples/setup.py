@@ -1,5 +1,6 @@
 from setuptools import find_packages, setup
-
+import os
+from glob import glob
 package_name = 'py_examples'
 
 setup(
@@ -10,6 +11,7 @@ setup(
         ('share/ament_index/resource_index/packages',
             ['resource/' + package_name]),
         ('share/' + package_name, ['package.xml']),
+        (os.path.join("share", package_name, "Launch"), glob(os.path.join("launch", "*launch.[pxy][yma]*")))
     ],
     install_requires=['setuptools'],
     zip_safe=True,
@@ -28,7 +30,10 @@ setup(
             "simple_subscriber = py_examples.simple_subscriber:main",
             "simple_parameter = py_examples.simple_parameters:main",
             "simple_service_server = py_examples.simple_service_server:main",
-            "simple_service_client = py_examples.simple_service_client:main"
+            "simple_service_client = py_examples.simple_service_client:main",
+            "simple_action_server = py_examples.simple_action_server:main",
+            "simple_action_client = py_examples.simple_action_client:main",
+            "simple_moveit_interface = py_examples.simple_moveit_interface:main",
         ],
     },
 )

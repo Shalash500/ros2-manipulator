@@ -9,10 +9,10 @@ from launch.substitutions import Command, LaunchConfiguration
 from pathlib import Path
 def generate_launch_description():
 
-    robot_description_package = get_package_share_directory("arduinobot_description")
+    robot_description_package = get_package_share_directory("robot_description")
 
     model_arg = DeclareLaunchArgument(name="model", default_value=os.path.join(
-                                        robot_description_package, "urdf", "arduinobot.urdf.xacro"
+                                        robot_description_package, "urdf", "robot.urdf.xacro"
                                         ),
                                       description="Absolute path to robot urdf file"
     )
