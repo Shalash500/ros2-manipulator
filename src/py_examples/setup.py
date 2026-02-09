@@ -34,6 +34,7 @@ setup(
             "simple_action_server = py_examples.simple_action_server:main",
             "simple_action_client = py_examples.simple_action_client:main",
             "simple_moveit_interface = py_examples.simple_moveit_interface:main",
+            "simple_lifecycle_node = py_examples.simple_lifecycle_node:main",
         ],
     },
 )
